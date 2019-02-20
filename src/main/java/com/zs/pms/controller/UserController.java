@@ -56,6 +56,7 @@ public class UserController {
 
 		return "user/add";
 	}
+	
 	@RequestMapping("/user/add.do")
 	public String add(TUser user,HttpSession session) {
 		//先把session信息放进TUser中
