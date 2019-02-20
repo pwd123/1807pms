@@ -118,12 +118,6 @@
 			<version>1.2.2</version>
 		</dependency>
 
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
-		</dependency>
-
 		<!-- ehcache 相关依赖 -->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>

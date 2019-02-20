@@ -79,14 +79,39 @@
 		                   );
 
 			
-		})
+		
 
+		
+		//文件上传
+		$("#file").change(
+		function () {
+			//文件上传
+			//提交数据  json
+			var data={
+					//url  的绝对路径
+					url:$("#apath").val()+"/upload/common.do",
+					//返回值类型
+					dataType:"text",
+					//提交方式
+					type:"post",
+					//成功回调
+					success:function(data){
+						//动态将src赋值给img
+						$("#picurl").attr("src","../upload/"+data);
+						$("#pic").val(data);
+					}
+			}
+			$("#jvForm").ajaxSubmit(data);
+		});
+		
+		
+		})
 	</script>
 </head>
 <body>
-	${pageContext.request.contextPath}
+	
 	<!--获得应用的绝对路径-->
-	<img src="${pageContext.request.contextPath}/images/logo4.png" />
+	<input type="hidden" id="apath" value="${pageContext.request.contextPath}" />
 	<br />
 	<!--绝对路径-->
 	<img src="../images/logo4.png" />
@@ -103,7 +128,7 @@
 		<div class="clear"></div>
 	</div>
 	<div class="body-box" style="float: right">
-		<form name="fm" id="jvForm" action="add.do" method="post">
+		<form name="fm" id="jvForm" action="add.do" method="post" enctype="multipart/form-data">
 			<table cellspacing="1" cellpadding="2" width="100%" border="0"
 				class="pn-ftable">
 				<tbody>
@@ -168,6 +193,15 @@
 						</select></td>
 					</tr>
 
+                     <tr>
+						<td width="20%" class="pn-flabel pn-flabel-h">头像:</td>
+						<td width="80%" class="pn-fcontent">
+						     <input type="file" id="file" name="file"/>
+						     <!-- 用于图片回显 -->
+						     <img id="picurl" width="60px" height="60px" />
+						     <input type="hidden" id="pic" name="pic"/>
+						</td>
+					</tr>
 
 				</tbody>
 				<tbody>

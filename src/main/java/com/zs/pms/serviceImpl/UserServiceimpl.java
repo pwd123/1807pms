@@ -70,7 +70,7 @@ public class UserServiceimpl implements UserService {
 		// TODO Auto-generated method stub
 		dao.insertUser(user);
 //		int a=1/0;
-		dao.insertUser(user);
+//		dao.insertUser(user);
 		return user.getId();
 	}
 

@@ -64,7 +64,6 @@ public class UserController {
 		//获得当前登录人的id
 		user.setCreator(cu.getId());
 		user.setIsenabled(1);
-		user.setPic("");
 		us.insertUser(user);
 		return "redirect:list.do";
 	}

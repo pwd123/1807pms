@@ -47,24 +47,24 @@
 			登录名: <input type="text" name="loginname" value="${QUERY.loginname }" />
 			<select name="isenabled">
 				<c:if test="${QUERY.isenabled==1}">
-				    <option value="0">是否可用</option>
+					<option value="0">是否可用</option>
 					<option value="1" selected="selected">可用</option>
 					<option value="-1">不可用</option>
 				</c:if>
 				<c:if test="${QUERY.isenabled==-1}">
-				    <option value="0">是否可用</option>
+					<option value="0">是否可用</option>
 					<option value="1">可用</option>
 					<option value="-1" selected="selected">不可用</option>
 				</c:if>
 				<c:if test="${QUERY.isenabled==0}">
-				    <option  selected="selected" value="0">是否可用</option>
+					<option selected="selected" value="0">是否可用</option>
 					<option value="1">可用</option>
 					<option value="-1">不可用</option>
 				</c:if>
 			</select> <input type="submit" class="query" value="查询" />
 		</form>
-		</div>
-		<form action="deledes.do" method="post">
+	</div>
+	<form action="deledes.do" method="post">
 		<table cellspacing="1" cellpadding="0" border="0" width="100%"
 			class="pn-ltable">
 			<thead class="pn-lthead">
@@ -76,6 +76,7 @@
 					<th>性别</th>
 					<th>部门</th>
 					<th>出生日期</th>
+					<th>头像</th>
 					<th>是否可用</th>
 					<th>操作选项</th>
 				</tr>
@@ -90,6 +91,7 @@
 						<td align="center">${user.sex}</td>
 						<td align="center">${user.dept.name}</td>
 						<td align="center">${user.birthdayTxt}</td>
+						<td align="center"><img src="../upload/${user.pic}" width="50px" height="50px"/></td>
 						<td align="center">${user.isenabledTxt}</td>
 						<td align="center"><a class="pn-opt"
 							href="userget.do?id=${user.id} ">修改</a> | <a class="pn-opt"
@@ -100,7 +102,7 @@
 			</tbody>
 		</table>
 		<div style="margin-top: 15px;">
-			<input class="del-button" type="submit" value="删除"  />
+			<input class="del-button" type="submit" value="删除" />
 			<div style="float: right">
 				<a
 					href="list.do?page=1&loginname=${QUERY.loginname }&isenabled=${QUERY.isenabled}">第一页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
@@ -110,6 +112,6 @@
 				/共${PAGECONT}页
 			</div>
 		</div>
-		</form>
+	</form>
 </body>
 </html>
