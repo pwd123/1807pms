@@ -94,7 +94,7 @@
 						<td align="center"><img src="../upload/${user.pic}" width="50px" height="50px"/></td>
 						<td align="center">${user.isenabledTxt}</td>
 						<td align="center"><a class="pn-opt"
-							href="userget.do?id=${user.id} ">修改</a> | <a class="pn-opt"
+							href="get.do?id=${user.id} ">修改</a> | <a class="pn-opt"
 							onClick="if(!confirm('是否删除数据?')){return false;}"
 							href="delede.do?id=${user.id}">删除</a></td>
 					</tr>

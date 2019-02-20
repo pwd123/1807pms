@@ -25,4 +25,6 @@ public interface UserDao {
 	public List<TUser> QueryByPage(QueryUser query);
 	//获取总条数
 	public int QueryCount(QueryUser query);
+	//通过id获取一条用户信息
+	public TUser queryById(int id);
 }

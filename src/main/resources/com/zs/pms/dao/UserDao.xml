@@ -69,19 +69,25 @@
 	<sql id="selector">
 		select * from tuser
 	</sql>
-	
-<resultMap type="TUser" id="usermap">
-<id property="id" column="id"/>
-<association property="dept" column="dept" select="getDep"/>
-</resultMap>
+
+	<resultMap type="TUser" id="usermap">
+		<id property="id" column="id" />
+		<association property="dept" column="dept" select="getDep" />
+	</resultMap>
 
 
 
 
-
-<select id="getDep" parameterType="int" resultType="TDep">
-    select * from tdep where id=#{dept}
-</select>
+	<!-- 获取部门信息 -->
+	<select id="getDep" parameterType="int" resultType="TDep">
+		select * from
+		tdep where id=#{dept}
+	</select>
+	<!-- 通过id获取一条用户信息 -->
+	<select id="queryById" parameterType="int" resultType="TUser">
+		select *
+		from tuser where id = #{id}
+	</select>
 
 	<!-- 参数是用户的id -->
 	<select id="queryByUid" parameterType="int" resultType="TPermission">
@@ -142,7 +148,7 @@
 	</select>
 	<!-- 获取总条数 -->
 	<select id="QueryCount" parameterType="QueryUser" resultType="int">
-	select count(1) from tuser
-	<include refid="where" />
+		select count(1) from tuser
+		<include refid="where" />
 	</select>
 </mapper>

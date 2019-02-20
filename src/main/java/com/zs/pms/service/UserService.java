@@ -72,6 +72,11 @@ public interface UserService {
 	 * @param user
 	 */
 	public void updateUser(TUser user);
+	/**通过id获取一条用户信息
+	 * @param id
+	 * @return
+	 */
+	public TUser queryById(int id);
 
 	/**
 	 * 分页查询

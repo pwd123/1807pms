@@ -116,6 +116,12 @@ public class UserServiceimpl implements UserService {
 		}
 	}
 
+	@Override
+	public TUser queryById(int id) {
+		// TODO Auto-generated method stub
+		return dao.queryById(id);
+	}
+
 
 
 }

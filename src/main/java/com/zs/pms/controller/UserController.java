@@ -90,5 +90,11 @@ public class UserController {
 		// 跳转url
 		return "redirect:list.do";
 	}
+	@RequestMapping("/user/get.do")
+	public String get(int id,ModelMap model) {
+		
+		model.addAttribute("GETUSER", us.queryById(id));
+		return "user/update";
+	}
 
 }
